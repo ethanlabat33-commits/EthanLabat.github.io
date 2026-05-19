@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Ethan Labat - Étudiant BTS SIO SLAM disponible pour stage/alternance 2025">
+    <title>Contact - Ethan Labat</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-enhanced.css">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            // Configuration EmailJS - Remplacez par vos identifiants
+            // emailjs.init('VOTRE_PUBLIC_KEY');
+        })();
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ethan Labat</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li>
+                    <label class="theme-toggle" for="theme-switch" title="Changer de thème">
+                        <input type="checkbox" id="theme-switch" hidden>
+                        <div class="theme-toggle-circle"></div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Me Contacter</h1>
+            <p>Vous pouvez me joindre facilement via les informations ci-dessous</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+
+            <div class="contact-grid">
+
+                <!-- Informations -->
+                <div class="contact-info">
+                    <h2>Informations de contact</h2>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:ethan.labat33@gmail.com">ethan.labat33@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:+33769410566">07 69 41 05 66</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h3>GitLab</h3>
+                            <p><a href="https://gitlab.com/ethlatane" target="_blank" rel="noopener">Mes projets GitLab</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/ethan-labat-857b79347" target="_blank" rel="noopener">Mon profil LinkedIn</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div>
+                            <h3>CV</h3>
+
+                            <p style="margin-bottom: 12px;">
+                                <strong>Aperçu :</strong>
+                            </p>
+
+                            <div style="width: 100%; max-width: 320px; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--darker-card); margin-bottom: 12px;">
+                                <img
+                                    src="moi.png"
+                                    alt="Aperçu CV"
+                                    style="width: 100%; height: auto; display: block; object-fit: cover;"
+                                >
+                            </div>
+
+                            <p style="margin: 0;">
+                                <a href="ethan-labat.pdf" download>Télécharger (PDF)</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="availability">
+                        <h3>Disponibilité</h3>
+                        <p>Disponible pour un stage ou une alternance en 2026</p>
+                        <p>Réponse rapide par email ou téléphone</p>
+                        <p>Bordeaux, Nouvelle-Aquitaine</p>
+                    </div>
+
+                    <div style="margin-top: 30px; padding: 20px; background: var(--darker-card); border-radius: 8px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Ce qui m'intéresse</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; color: var(--text-gray);">Développement Web (PHP, JavaScript)</li>
+                            <li style="padding: 8px 0; color: var(--text-gray);">Applications Desktop (C#, WinForms)</li>
+                            <li style="padding: 8px 0; color: var(--text-gray);">Bases de données (SQL, MySQL)</li>
+                            <li style="padding: 8px 0; color: var(--text-gray);">Projets innovants et formateurs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="contact-form-section">
+                    <h2>Envoyer un message</h2>
+                    <p style="color: var(--text-gray); margin-bottom: 25px;">
+                        Vous avez un projet, une question ou une opportunité ? 
+                        Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.
+                    </p>
+
+                    <form class="contact-form" id="contact-form">
+
+    <div class="form-group">
+        <label for="name">Nom complet *</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Adresse email *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Sujet</label>
+        <select id="subject" name="subject">
+            <option value="stage">Proposition de stage</option>
+            <option value="alternance">Proposition d'alternance</option>
+            <option value="projet">Projet</option>
+            <option value="question">Question</option>
+            <option value="autre">Autre</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Envoyer le message
+    </button>
+
+    <p id="status" style="margin-top:10px;"></p>
+
+</form>
+
+                    <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(124, 58, 237, 0.05)); border-radius: 8px; border: 1px solid var(--border-color);">
+                        <h4 style="color: var(--primary-color); margin-bottom: 10px;">Vous préférez un contact direct ?</h4>
+                        <p style="color: var(--text-gray); font-size: 14px; line-height: 1.6;">
+                            N'hésitez pas à m'envoyer un email directement à 
+                            <a href="mailto:ethan.labat33@gmail.com" style="color: var(--primary-color);">ethan.labat33@gmail.com</a>
+                            ou à m'appeler au 
+                            <a href="tel:+33769410566" style="color: var(--primary-color);">07 69 41 05 66</a>.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+                <div class="container">
+            <p>&copy; 2026 Ethan Labat - Portfolio BTS SIO SLAM</p>
+            <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">
+                Lycée Gustave Eiffel - Bordeaux
+            </p>
+            <div style="margin-top: 15px;">
+                <a href="https://www.linkedin.com/in/ethan-labat-857b79347" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none; margin: 0 10px;">LinkedIn</a>
+                <a href="https://gitlab.com/ethlatane" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none; margin: 0 10px;">GitLab</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    emailjs.init("TA_PUBLIC_KEY"); // <-- ta clé EmailJS ici
+
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        status.innerHTML = "Envoi en cours...";
+        status.style.color = "white";
+
+        emailjs.send("TON_SERVICE_ID", "TON_TEMPLATE_ID", {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+        })
+        .then(() => {
+            status.innerHTML = "Message envoyé avec succès.";
+            status.style.color = "lightgreen";
+            form.reset();
+        })
+        .catch((error) => {
+            console.error(error);
+            status.innerHTML = "Erreur lors de l'envoi du message.";
+            status.style.color = "red";
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>
