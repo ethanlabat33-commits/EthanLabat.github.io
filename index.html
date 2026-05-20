@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Portfolio de Ethan Labat - Étudiant en BTS SIO SLAM, développement web et logiciel.">
+    <meta name="keywords"
+        content="Portfolio, BTS SIO, SLAM, Développeur, PHP, C#, HTML, CSS, SQL, Bordeaux">
+    <meta name="author" content="Ethan Labat">
+
+    <title>Ethan Labat - Portfolio BTS SIO SLAM</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-enhanced.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            // emailjs.init('VOTRE_PUBLIC_KEY');
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo">
+                Ethan Labat
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <label class="theme-toggle" for="theme-switch" title="Changer de thème">
+                        <input type="checkbox" id="theme-switch" hidden>
+                        <div class="theme-toggle-circle"></div>
+                    </label>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <h1>Ethan Labat</h1>
+
+                <h2>Étudiant en BTS SIO option SLAM</h2>
+
+                <p class="subtitle">
+                    Je suis étudiant en BTS SIO option SLAM au Lycée Gustave Eiffel à Bordeaux.
+                    Cette formation me permet de développer des compétences en développement web,
+                    programmation et gestion de bases de données.
+                </p>
+
+                <p class="subtitle" style="margin-top: 10px;">
+                    À travers différents projets réalisés en formation et en stage,
+                    j’ai pu renforcer mes connaissances techniques et découvrir le travail
+                    en environnement professionnel.
+                </p>
+
+                <!-- Statistiques -->
+                <div class="hero-stats">
+
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Années d'études</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Projets réalisés</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Compétences BTS SIO</div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Mois de stage</div>
+                    </div>
+
+                </div>
+
+                <!-- Boutons -->
+                <div class="hero-buttons">
+
+                    <a href="projets.html" class="btn btn-primary">
+                        Voir mes projets
+                    </a>
+
+                    <a href="contact.html" class="btn btn-secondary">
+                        Me contacter
+                    </a>
+
+                    <a href="ethan-labat.pdf" download class="btn btn-download">
+                        Télécharger mon CV
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Image -->
+            <div class="hero-image">
+                <img src="moi.png" alt="Photo de Ethan Labat">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Compétences -->
+    <section class="skills-preview">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Compétences principales
+            </h2>
+
+            <div class="skills-quick-grid">
+
+                <div class="skill-quick">
+                    <h3>HTML / CSS</h3>
+
+                    <p>
+                        Création d’interfaces web modernes et responsive.
+                    </p>
+                </div>
+
+                <div class="skill-quick">
+                    <h3>C#</h3>
+
+                    <p>
+                        Développement d’applications orientées objet.
+                    </p>
+                </div>
+
+                <div class="skill-quick">
+                    <h3>SQL</h3>
+
+                    <p>
+                        Gestion et conception de bases de données relationnelles.
+                    </p>
+                </div>
+
+                <div class="skill-quick">
+                    <h3>PHP</h3>
+
+                    <p>
+                        Développement de fonctionnalités dynamiques côté serveur.
+                    </p>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+
+                <a href="competences.html" class="btn btn-primary">
+                    Voir toutes mes compétences
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Présentation -->
+    <section class="cta-section">
+
+        <div class="container">
+
+            <div class="cta-card">
+
+                <h2>
+                    Intéressé par mon profil ?
+                </h2>
+
+                <p>
+                    Ce portfolio présente les projets et compétences développés
+                    durant ma formation en BTS SIO.
+                </p>
+
+                <p>
+                    Vous pouvez consulter mes réalisations ou me contacter
+                    pour obtenir plus d’informations.
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="contact.html" class="btn btn-primary">
+                        Me contacter
+                    </a>
+
+                    <a href="ethan-labat.pdf" download class="btn btn-download">
+                        Télécharger mon CV
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 Ethan Labat - Portfolio BTS SIO SLAM
+            </p>
+
+            <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">
+                Lycée Gustave Eiffel - Bordeaux
+            </p>
+
+            <div style="margin-top: 15px;">
+
+                <a href="mailto:ethan.labat33@gmail.com">
+                    Email
+                </a>
+
+                <a href="https://gitlab.com/ethlatane" target="_blank">
+                    GitLab
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

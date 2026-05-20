@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP 3.1 – M2L Dynamique – Ethan Labat</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ethan Labat</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../projets.html" class="active">Projets</a></li>
+                <li><a href="../competences.html">Compétences</a></li>
+                <li><a href="../parcours.html">Parcours</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-badges">
+                <span class="hero-badge">AP 3.1</span>
+                <span class="hero-badge status">Terminé</span>
+                <span class="hero-badge">Projet M2L</span>
+            </div>
+            
+            <h1>M2L – Site Dynamique</h1>
+            <p class="tagline">
+                Développement du système de gestion des intervenants et bulletins de salaire
+                pour la Maison des Ligues de Lorraine, dans le cadre de l'AP 3.1 du BTS SIO.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <div class="label">Équipe</div>
+                    <div class="value">3 étudiants</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="label">Durée</div>
+                    <div class="value">20 heures</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="label">Mon rôle</div>
+                    <div class="value">Gestion des intervenants</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-code"></i>
+                    <div class="label">Technologies</div>
+                    <div class="value">PHP MVC • MySQL • DAO/DTO</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexte -->
+    <section class="section-detail">
+        <div class="container">
+            <div class="section-header">
+                <h2>Le Projet</h2>
+                <p>Modernisation du site de la Maison des Ligues de Lorraine</p>
+            </div>
+
+            <div class="context-card">
+                <h3><i class="fas fa-info-circle"></i> Objectif global</h3>
+                <p>
+                    La M2L souhaitait transformer son site statique en une application dynamique permettant
+                    de gérer les ligues, les clubs, les intervenants, les formations et les bulletins de salaire.
+                </p>
+            </div>
+
+            <div class="context-card">
+                <h3><i class="fas fa-user-cog"></i> Ma mission : Gestion RH</h3>
+                <p>
+                    J'ai été responsable du développement complet de la <strong>gestion des intervenants</strong> (salariés et bénévoles)
+                    et du <strong>système de bulletins de salaire</strong>. Mon travail s'est concentré sur ces deux fonctionnalités
+                    essentielles pour la gestion des ressources humaines de la M2L.
+                </p>
+            </div>
+        </div>
+    </section>
+<!-- Ma Contribution -->
+<section class="section-detail">
+    <div class="container">
+        <div class="section-header">
+            <h2>Ma Contribution : Module RH Complet</h2>
+            <p>Développement d'un système de gestion des ressources humaines</p>
+        </div>
+
+        <div class="contribution-section">
+            <h4>Ce que j'ai mis en place</h4>
+            <p class="implementation-intro">
+                Développement spécialisé de deux modules RH essentiels : gestion complète des intervenants
+                et système sécurisé de bulletins de salaire, avec architecture MVC et sécurité des données.
+            </p>
+
+            <!-- Architecture technique -->
+            <div class="tech-architecture">
+                <h5>Architecture technique implémentée</h5>
+                <div class="architecture-grid">
+                    <div class="arch-component">
+                        <h6><i class="fas fa-layer-group"></i> Architecture MVC</h6>
+                        <ul>
+                            <li><strong>IntervenantController.php</strong> - Gestion salariés/bénévoles</li>
+                            <li><strong>BulletinController.php</strong> - Upload et gestion bulletins</li>
+                            <li><strong>IntervenantDAO.php</strong> - Accès données intervenants</li>
+                        </ul>
+                    </div>
+
+                    <div class="arch-component">
+                        <h6><i class="fas fa-database"></i> Modèle de données RH</h6>
+                        <ul>
+                            <li><strong>Table utilisateur</strong> - Profils salariés et bénévoles</li>
+                            <li><strong>Table salarié/bénévole</strong> - Extension par rôle</li>
+                            <li><strong>Table bulletin</strong> - Stockage bulletins PDF</li>
+                        </ul>
+                    </div>
+
+                    <div class="arch-component">
+                        <h6><i class="fas fa-shield-alt"></i> Sécurité et confidentialité</h6>
+                        <ul>
+                            <li><strong>Contrôle d'accès</strong> - Droits selon le rôle utilisateur</li>
+                            <li><strong>Upload sécurisé</strong> - Validation fichiers PDF</li>
+                            <li><strong>Données sensibles</strong> - Protection bulletins salaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fonctionnalités détaillées -->
+            <div class="detailed-features">
+                <h5>Fonctionnalités développées</h5>
+
+                <div class="feature-detail">
+                    <h6><i class="fas fa-file-pdf"></i> Système de bulletins de salaire</h6>
+                    <div class="feature-content">
+                        <div class="feature-specs">
+                            <h7>Gestion des bulletins PDF :</h7>
+                            <ul>
+                                <li><strong>Upload sécurisé</strong> - Interface drag & drop pour fichiers PDF</li>
+                                <li><strong>Stockage organisé</strong> - Répertoire dédié par intervenant</li>
+                                <li><strong>Association automatique</strong> - Lien bulletin-contrat-salarie</li>
+                            </ul>
+                        </div>
+                        <div class="feature-security">
+                            <h7>Sécurité et confidentialité :</h7>
+                            <ul>
+                                <li><strong>Validation fichiers</strong> - Vérification type, taille, contenu PDF</li>
+                                <li><strong>Accès restreint</strong> - Uniquement le salarié concerné</li>
+                                <li><strong>Logs d'activité</strong> - Traçabilité des uploads</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competence-link">
+                        <span class="link-badge">Relie à : Gérer le patrimoine informatique</span>
+                    </div>
+                </div>
+
+                <div class="feature-detail">
+                    <h6><i class="fas fa-tasks"></i> Interfaces utilisateur et expérience</h6>
+                    <div class="feature-content">
+                        <div class="feature-specs">
+                            <h7>Interfaces développées :</h7>
+                            <ul>
+                                <li><strong>Dashboard RH</strong> - Vue d'ensemble intervenants et bulletins</li>
+                                <li><strong>Espace salarié</strong> - Consultation bulletins personnels</li>
+                                <li><strong>Espace bénévole</strong> - Gestion profil simplifiée</li>
+                            </ul>
+                        </div>
+                        <div class="feature-security">
+                            <h7>Tests et validation :</h7>
+                            <ul>
+                                <li><strong>Tests fonctionnels</strong> - Validation de tous les scénarios d'usage</li>
+                                <li><strong>Tests de sécurité</strong> - Vérification contrôles d'accès</li>
+                                <li><strong>Tests d'intégration</strong> - Compatibilité avec le système global</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="competence-link">
+                        <span class="link-badge">Relie à : Mettre à disposition un service informatique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Compétences BTS SIO -->
+   <section class="section-detail">
+    <div class="container">
+        <div class="section-header">
+            <h2>Compétences BTS SIO démontrées</h2>
+            <p>Contribution directe aux référentiels officiels du BTS SIO</p>
+        </div>
+
+        <div class="competences-grid">
+
+            <div class="competence-block">
+                <h4><i class="fas fa-database"></i> B1.1. Gérer le patrimoine informatique</h4>
+                <p>
+                    Conception de la base de données MySQL pour les intervenants et les bulletins de salaire.<br>
+                    Utilisation de l’architecture MVC (DAO, DTO, Contrôleurs, Vues) pour structurer le projet.<br>
+                    Gestion et sauvegarde du code via GitLab pour sécuriser l’historique du développement.
+                </p>
+                                                    <button class="competence-proof-btn" type="button" data-title="B1.5 — Mettre à disposition un service informatique" data-description="Tests, déploiement local et documentation utilisateur" data-media="pdf|../imageP/ap3.1/Structure.png,image|../imageP/ap3.1/gitap3.1.png">
+                        Voir la preuve
+                    </button>
+            </div>
+
+            <div class="competence-block">
+                <h4><i class="fas fa-project-diagram"></i> B1.4. Travailler en mode projet</h4>
+                <p>
+                    Analyse du cahier des charges en équipe puis gestion autonome de la partie “intervenants”.<br>
+                    Organisation et suivi des tâches avec Trello afin de respecter les délais du projet.
+                </p>
+                                                    <button class="competence-proof-btn" type="button" data-title="B1.5 — Mettre à disposition un service informatique" data-description="Tests, déploiement local et documentation utilisateur" data-media="pdf|../imageP/ap3.1/trello3.1.png">
+                        Voir la preuve
+                    </button>
+            </div>
+
+            <div class="competence-block">
+                <h4><i class="fas fa-server"></i> B1.5. Mettre à disposition un service informatique</h4>
+                <p>
+                    Réalisation de tests d’intégration pour vérifier la compatibilité avec le reste du site.<br>
+                    Validation des fonctionnalités RH et mise à disposition du code via GitLab.
+                </p>
+                                                    <button class="competence-proof-btn" type="button" data-title="B1.5 — Mettre à disposition un service informatique" data-description="Tests, déploiement local et documentation utilisateur" data-media="pdf|../imageP/ap3.1/Co3.1.png">
+                        Voir la preuve
+                    </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+            <div class="competence-summary">
+                <h3>Synthèse des acquis</h3>
+                <p>
+                    Ce projet m’a permis de démontrer concrètement des compétences BTS SIO à travers deux modules RH critiques : la gestion complète des intervenants
+                    (salariés et bénévoles) et un système sécurisé de bulletins de salaire. J’ai conçu le modèle de données, développé les contrôleurs et vues,
+                    sécurisé les accès et les uploads, puis validé l’intégration via des tests fonctionnels et d’intégration. Au final, j’ai construit un service web RH
+                    cohérent avec l’architecture globale du site M2L, en respectant les contraintes de sécurité et de fiabilité.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<style>
+        .competence-proof-btn {
+            margin-top: 14px;
+            padding: 10px 14px;
+            border: 2px solid #111;
+            background: #fff;
+            color: #111;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 #111;
+        }
+
+        .competence-proof-btn:hover {
+            transform: translate(1px, 1px);
+            box-shadow: 3px 3px 0 #111;
+        }
+
+        .competence-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        .competence-modal.open {
+            display: flex;
+        }
+
+        .competence-modal-panel {
+            width: min(100%, 1100px);
+            max-height: 90vh;
+            overflow: auto;
+            background: #fff;
+            color: #111;
+            border: 3px solid #111;
+            box-shadow: 10px 10px 0 #111;
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .competence-modal-header {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .competence-modal-close {
+            border: 2px solid #111;
+            background: #fff;
+            color: #111;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .competence-modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .competence-media-card {
+            border: 2px solid #111;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f7f7f7;
+        }
+
+        .competence-media-card img,
+        .competence-media-card iframe {
+            width: 100%;
+            display: block;
+            border: 0;
+            height: 320px;
+        }
+
+        .competence-media-caption {
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    </style>
+
+    <div class="competence-modal" id="competence-modal" aria-hidden="true">
+        <div class="competence-modal-panel" role="dialog" aria-modal="true" aria-labelledby="competence-modal-title">
+            <div class="competence-modal-header">
+                <div>
+                    <h3 id="competence-modal-title" style="margin-bottom: 8px;">Preuves</h3>
+                    <p id="competence-modal-description" style="margin: 0; color: #444;">Capture(s) du stage</p>
+                </div>
+                <button class="competence-modal-close" type="button" id="competence-modal-close" aria-label="Fermer">×</button>
+            </div>
+            <div class="competence-modal-gallery" id="competence-modal-gallery"></div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('competence-modal');
+            const modalTitle = document.getElementById('competence-modal-title');
+            const modalDescription = document.getElementById('competence-modal-description');
+            const modalGallery = document.getElementById('competence-modal-gallery');
+            const closeBtn = document.getElementById('competence-modal-close');
+
+            function openModal(button) {
+                const title = button.dataset.title || 'Preuves';
+                const description = button.dataset.description || '';
+                const media = (button.dataset.media || '').split(',').filter(Boolean);
+
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+                modalGallery.innerHTML = '';
+
+                media.forEach((entry, index) => {
+                    const parts = entry.split('|');
+                    const type = parts[0];
+                    const src = parts.slice(1).join('|');
+
+                    const card = document.createElement('div');
+                    card.className = 'competence-media-card';
+
+                    if (type === 'pdf') {
+                        card.innerHTML = '<iframe src="' + src + '"></iframe><div class="competence-media-caption">Document de preuve ' + (index + 1) + '</div>';
+                    } else {
+                        card.innerHTML = '<img src="' + src + '" alt="Preuve ' + (index + 1) + '"><div class="competence-media-caption">Visuel de preuve ' + (index + 1) + '</div>';
+                    }
+
+                    modalGallery.appendChild(card);
+                });
+
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+
+            document.querySelectorAll('.competence-proof-btn').forEach(button => {
+                button.addEventListener('click', () => openModal(button));
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') closeModal();
+            });
+        })();
+    </script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Ethan Labat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ethan Labat</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <label class="theme-toggle" for="theme-switch" title="Changer de thème">
+                        <input type="checkbox" id="theme-switch" hidden>
+                        <div class="theme-toggle-circle"></div>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Mes Projets</h1>
+            <p>Applications et sites développés durant ma formation et mon stage</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+
+            <div class="project-card" id="site-m2l-evolution">
+                                <div class="project-image">
+    <img src="imageP/stage/m2l.png"
+         alt="Projet ESI Bordeaux"
+         style="width:100%; height:100%; object-fit: cover;">
+</div>
+
+                
+
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Site M2L</h3>
+                            <div class="project-stats">
+                                <div class="stat-item"><span class="stat-icon"></span><span>Groupe de 3</span></div>
+                                <div class="stat-item"><span class="stat-icon"></span><span>5 semaines (20h)</span></div>
+                            </div>
+                        </div>
+                        <span class="project-badge">AP 3.1</span>
+                    </div>
+
+                    <p class="project-description">
+                        <strong>Contexte :</strong> Évolution majeure du site M2L pour la gestion dynamique des ligues, des formations et des bulletins de salaire des intervenants (salariés et bénévoles).
+                    </p>
+
+                    <p class="project-description">
+                        <strong>Ma contribution :</strong> Développement de la <strong>partie B - Gestion des intervenants et bulletins de salaire</strong> (niveau difficulté 2/3). Mise en place d'un système complet permettant :
+                    </p>
+
+                    <ul class="project-description" style="margin-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+                        <li>Upload de bulletins de salaire (PDF) par le responsable RH</li>
+                        <li>Consultation sécurisée des bulletins et contrats par les salariés (accès limité à leurs propres données)</li>
+                        <li>Gestion différenciée Salarié/Bénévole (contrats et bulletins uniquement pour les salariés)</li>
+                        <li>Interface d'administration RH complète (CRUD intervenants, contrats, bulletins)</li>
+                        <li>Contrôleur spécialisé <code>contrôleurBulletins</code> et vue <code>vueBulletins</code></li>
+                    </ul>
+
+                    <p class="project-description">
+                        <strong>Réalisation technique :</strong> PHP Objet strict, architecture MVC (DTO/DAO), gestion sécurisée des fichiers PDF, système d'authentification et d'autorisation multi-niveaux (RH / Salarié / Bénévole).
+                    </p>
+
+                    
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP Objet</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">DTO/DAO</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Upload PDF</span>
+                        <span class="tech-tag">Contrôle d'accès</span>
+                    </div>
+
+
+                    <div class="project-links">
+                        <a href="https://gitlab.com/julien.lavery3/ap-3.1-site-m2l-dynamique-g8" class="project-link" target="_blank">
+                            <span></span><span>GitLab</span>
+                        </a>
+                                  <a href="projets/site-m2l.html" class="project-link">
+                            <span></span><span>Voir le projet</span>
+                        </a>
+                    </div>
+                                  
+                </div>
+            </div>
+
+            <div class="project-card" id="aux-claviers-citoyens">
+                                <div class="project-image">
+    <img src="imageP/stage/militaire.jpg"
+         alt="Projet ESI Bordeaux"
+         style="width:100%; height:100%; object-fit: cover;">
+</div>
+
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Aux Claviers Citoyens - E-sport Militaire</h3>
+                            <div class="project-stats">
+                                <div class="stat-item"><span class="stat-icon"></span><span>Groupe de 6</span></div>
+                                <div class="stat-item"><span class="stat-icon"></span><span>En cours</span></div>
+                            </div>
+                        </div>
+                        <span class="project-badge">AP 3.2</span>
+                    </div>
+
+                    <p class="project-description">
+                        <strong>Contexte :</strong> Développement d'une application de gestion de tournois e-sport pour le Commissariat au Numérique de Défense (CND). L'application permet de suivre en temps réel les scores et matchs lors de compétitions entre étudiants et militaires.
+                    </p>
+
+                    <p class="project-description">
+                        <strong>Ma contribution :</strong> Développement du <strong>système d'authentification complet</strong> (OAuth2, inscription, connexion, gestion des tokens JWT). Implémentation des endpoints sécurisés pour la gestion des utilisateurs et des mots de passe.
+                    </p>
+
+                    <p class="project-description">
+                        <strong>Réalisation technique :</strong> API REST sécurisée, OAuth2, JWT Bearer tokens, hachage bcrypt...
+                    </p>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP API REST</span>
+                        <span class="tech-tag">OAuth2</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">MVC</span>
+                        <span class="tech-tag">Sécurité</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://gitlab.com/votre-username/ap-3.2-aux-claviers-citoyens" class="project-link" target="_blank">
+                            <span></span><span>GitLab</span>
+                        </a>
+
+                        <a href="projets/aux-claviers-citoyens.html" class="project-link">
+                            <span></span><span>Voir le projet</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" id="app-associations">
+                                <div class="project-image">
+    <img src="imageP/stage/mairie.jpg"
+         alt="Projet ESI Bordeaux"
+         style="width:100%; height:100%; object-fit: cover;">
+</div>
+
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Stage 1 Mairie St-Symphorien</h3>
+                            <div class="project-stats">
+                                <div class="stat-item"><span class="stat-icon"></span><span>Mairie St-Symphorien</span></div>
+                                <div class="stat-item"><span class="stat-icon"></span><span>5 semaines</span></div>
+                            </div>
+                        </div>
+                        <span class="project-badge">Stage</span>
+                    </div>
+
+                    <p class="project-description">
+                        Développement d'une application web PHP/MVC pour la gestion des démarches administratives des associations locales.
+                    </p>
+
+                    <div class="project-documents">
+                        <div class="project-links" style="margin-top: 20px;">
+                            <a href="projets/app-associations.html" class="project-link">
+                                <span></span><span>Voir le projet stage 1</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" id="stage2">
+                <div class="project-image">
+    <img src="imageP/stage/dgfip.png"
+         alt="Projet ESI Bordeaux"
+         style="width:100%; height:100%; object-fit: cover;">
+</div>
+
+                <div class="project-content">
+                    <div class="project-header">
+                        <div>
+                            <h3 class="project-title">Stage 2 ESI de Bordeaux</h3>
+                            <div class="project-stats">
+                                <div class="stat-item"><span class="stat-icon"></span><span>ESI de Bordeaux</span></div>
+                                <div class="stat-item"><span class="stat-icon"></span><span>8 semaines</span></div>
+                            </div>
+                        </div>
+                        <span class="project-badge">Stage</span>
+                    </div>
+
+                    <p class="project-description">
+                        Développement d'une application web métier et pilotage de projet pour le second stage à l'ESI de Bordeaux.
+                    </p>
+
+                    <div class="project-documents">
+                        <div class="project-links" style="margin-top: 20px;">
+                            <a href="projets/stage2.html" class="project-link">
+                                <span></span><span>Voir le projet stage 2</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ethan Labat - Portfolio BTS SIO SLAM</p>
+            <p style="margin-top: 10px; color: var(--text-gray); font-size: 14px;">
+                Lycée Gustave Eiffel - Bordeaux
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

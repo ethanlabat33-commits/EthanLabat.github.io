@@ -1,0 +1,1304 @@
+/* Réinitialisation des marges et des paddings pour tous les éléments */
+* {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements internes par défaut */
+    box-sizing: border-box; /* Permet de mieux gérer la taille des éléments (inclut les bordures et le padding dans la largeur/hauteur) */
+}
+
+/* Style général du corps de la page */
+body {
+    font-family: 'Qanelas', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    /* Police utilisée (Qanelas si dispo, sinon les autres en secours) */
+    background: #f0f2f5; /* Couleur de fond gris clair */
+    color: #333; /* Couleur du texte (gris foncé) */
+    line-height: 1.6; /* Hauteur des lignes pour une meilleure lisibilité */
+}
+
+/* Import de la police Qanelas Light */
+@font-face {
+    font-family: 'Qanelas'; /* Nom de la police à utiliser dans le reste du code */
+    src: url('fonts/Qanelas-Light.woff2') format('woff2'), /* Fichier principal au format woff2 */
+         url('fonts/Qanelas-Light.woff') format('woff');    /* Fichier de secours au format woff */
+    font-weight: 300; /* Correspond à un poids léger (Light) */
+    font-style: normal; /* Style de base (pas italique) */
+    font-display: swap; /* Affiche une police temporaire en attendant que Qanelas soit chargée */
+}
+
+/* Import de la police Qanelas Medium */
+@font-face {
+    font-family: 'Qanelas'; /* Même nom que précédemment */
+    src: url('fonts/Qanelas-Medium.woff2') format('woff2'),
+         url('fonts/Qanelas-Medium.woff') format('woff');
+    font-weight: 500; /* Poids moyen (Medium) */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Import de la police Qanelas SemiBold */
+@font-face {
+    font-family: 'Qanelas';
+    src: url('fonts/Qanelas-SemiBold.woff2') format('woff2'),
+         url('fonts/Qanelas-SemiBold.woff') format('woff');
+    font-weight: 600; /* Poids plus gras que Medium (SemiBold) */
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Container général */
+.container {
+    margin: 50px auto 100px auto; /* Centrage horizontal avec marge verticale */
+    background: #fff;  /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre douce pour le relief */
+}
+
+/* Zone principale où tout le contenu est placé */
+.main-container {
+    padding: 30px; /* Espacement intérieur autour du contenu */
+    max-width: 1200px; /* Largeur maximale */
+    margin: auto; /* Centre horizontalement */
+}
+
+/* En-tête qui met les éléments à gauche et à droite */
+.header-section {
+    display: flex; /* Met les éléments sur une ligne */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligne les éléments au milieu verticalement */
+    margin-bottom: 25px; /* Espace en dessous */
+}
+
+/* Titre de la page */
+.page-title {
+    font-size: 28px; /* Taille du texte */
+    color: #333; /* Couleur gris foncé */
+}
+
+/* Grille pour afficher les cartes avec plusieurs colonnes */
+.card-grid {
+    display: grid; /* Organise les cartes en grille */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes adaptables */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+/* Style des cartes */
+.card {
+    background-color: #fff; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espace à l’intérieur */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* Petite ombre */
+    display: flex; /* Met le contenu en colonne */
+    flex-direction: column; /* Organise les éléments de haut en bas */
+    justify-content: space-between; /* Espace entre le haut et le bas */
+}
+
+
+/* Titre dans la carte */
+.card h3 {
+    margin-top: 0; /* Pas d’espace au-dessus */
+    color: #007bff; /* Bleu */
+}
+
+/* Texte dans la carte */
+.card p {
+    margin: 6px 0; /* Petit espace en haut et en bas */
+    font-size: 14px; /* Taille du texte */
+}
+
+/* Zone avec les boutons ou liens dans la carte */
+.card-actions {
+    display: flex; /* Met les actions sur une ligne */
+    justify-content: space-between; /* Espace entre eux */
+    margin-top: 15px; /* Espace au-dessus */
+    gap: 10px; /* Espace entre les boutons */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si besoin */
+}
+
+/* Barre de navigation principale */
+nav {
+    background: #0D2D6B; /* Fond bleu foncé */
+    box-shadow: 0 2px 8px rgba(13, 45, 107, 0.5); /* Ombre douce */
+    position: sticky; /* Fixée en haut lors du scroll */
+    top: 0; /* Collée au haut de la page */
+    z-index: 10; /* Passe au-dessus des autres éléments */
+}
+
+/* Liste principale dans le menu */
+nav ul {
+    display: flex; /* Alignement horizontal */
+    justify-content: center; /* Centre les éléments */
+    gap: 30px; /* Espacement entre les items */
+    list-style: none; /* Supprime les puces */
+    padding: 15px 0; /* Padding vertical */
+    list-style-type: none; /* Redondant, mais sécurise */
+}
+
+/* Élément de la liste (li) */
+nav ul li {
+    float: left; /* Aligne les éléments sur une ligne (ancien système) */
+    width: 20%; /* Chaque item prend 20% de largeur */
+    text-align: center; /* Centre le texte */
+    position: relative; /* Nécessaire pour positionner les sous-menus */
+}
+
+nav ul::after {
+    content: "  ";         /* Ajoute un contenu vide après la liste */
+    display: table;        /* Force l’élément généré à se comporter comme un élément de type tableau */
+    clear: both;           /* Vide les flottants à gauche et à droite : permet d’empêcher les débordements */
+}
+
+
+/* Liens dans la navigation principale  */
+nav a {
+    display: block; /* Prend tout l'espace disponible */
+    text-decoration: none; /* Supprime le soulignement */
+    color: #0D2D6B; /* Bleu foncé */
+    border-bottom: 2px solid transparent; /* Pour animation éventuelle */
+    padding: 10px 0px; /* Espacement vertical */
+}
+
+/* Liens dans la navigation principale lors d'un survol */
+nav a:hover{
+    color: #C8A33A; /* Devient doré au survol */
+}
+
+/* Afficher le sous-menu au survol */
+nav li:hover .sous {
+    opacity: 1; /* Le sous-menu devient visible */
+    transform: translateY(0); /* Revient à sa position d’origine */
+    visibility: visible; /* Rendu visible */
+}
+
+
+/* Styles pour les sous-menus */
+.sous {
+    display: none;                         /* Caché par défaut */
+    position: absolute;                    /* Positionné par rapport au parent */
+    left: 0;                               /* Aligné à gauche de l'élément parent */
+    min-width: 180px;                      /* Largeur minimale du sous-menu */
+    background-color: #fff;                /* Fond blanc */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    border-radius: 0 0 5px 5px;            /* Coins inférieurs arrondis */
+    padding: 0;                            /* Aucun espacement intérieur */
+    overflow: hidden;                      /* Cache tout dépassement */
+    
+    /* Animation à l'ouverture */
+    opacity: 0;                            /* Transparent au départ */
+    transform: translateY(10px);           /* Légèrement décalé vers le bas */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation douce */
+    
+    visibility: hidden;                    /* Ne prend pas de place tant qu’invisible */
+    z-index: 1000;                         /* Passe au-dessus des autres éléments */
+}
+
+
+nav > ul li:hover .sous {
+    display: block; /* Affiche le sous-menu quand on survole l'élément parent */
+}
+
+.sous li {
+    width: 100%; /* Chaque lien du sous-menu prend toute la largeur disponible */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.sous a {
+    padding: 10px 15px; /* Espace intérieur autour du texte pour le confort visuel */
+    border-bottom: 1px solid #eee; /* Ligne fine sous chaque lien pour les séparer */
+    color: #0D2D6B; /* Couleur du texte en bleu foncé */
+    background-color: #fff; /* Fond blanc du lien */
+    display: block; /* Occupe toute la ligne */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animation douce au survol */
+}
+
+.sous a:last-child {
+    border-bottom: none; /* Supprime la ligne sous le dernier lien */
+}
+
+.sous a:hover {
+    background-color: transparent; /* Pas de fond quand on survole */
+    color: #C8A33A; /* Change la couleur du texte en doré au survol */
+}
+
+/* Flèche indiquant un menu déroulant */
+.deroulant > a::after{
+    content: "▼";          /* Affiche le symbole flèche vers le bas */
+    font-size: 12px;       /* Taille de la flèche */
+}
+
+/* Style général des liens dans la navigation principale */
+nav ul li a {
+    color: #fff;                    /* Couleur blanche du texte */
+    font-weight: 600;               /* Texte semi-gras */
+    text-decoration: none;          /* Supprime le soulignement par défaut */
+    padding: 10px 20px;             /* Espacement interne : haut/bas 10px, gauche/droite 20px */
+    border-radius: 25px;            /* Bords arrondis pour un style "bouton" */
+    transition: background 0.3s ease, color 0.3s ease; /* Transition fluide au changement de fond et de couleur */
+    font-size: 1rem;                /* Taille du texte */
+}
+
+/* Style au survol et lorsque le lien est actif */
+nav ul li a:hover,
+nav ul li a.active {
+    background: #C8A33A;            /* Fond doré */
+    color: #0D2D6B;                 /* Texte bleu foncé */
+    box-shadow: 0 0 12px #C8A33A;  /* Ombre lumineuse autour pour effet de halo */
+}
+
+/* Titres */
+h1, h2 {
+    font-family: 'Qanelas', sans-serif;  /* Applique la police personnalisée "Qanelas" ou une police sans-serif en secours */
+    color: #0D2D6B;                      /* Couleur bleu foncé pour le texte des titres */
+    text-align: center;                 /* Centre le texte horizontalement */
+    margin-bottom: 25px;                /* Ajoute un espace de 25px sous les titres */
+}
+
+form {
+    max-width: 480px;                   /* Limite la largeur du formulaire à 480px */
+    margin: 0 auto 40px auto;           /* Centre le formulaire horizontalement et ajoute 40px de marge en bas */
+    padding: 25px;                      /* Ajoute un espacement intérieur de 25px autour du contenu */
+}
+
+/* Style pour les étiquettes (labels) du formulaire */
+label {
+    display: block;             /* Le label prend toute la largeur (s'affiche sur sa propre ligne) */
+    font-weight: 600;           /* Texte en semi-gras */
+    margin-bottom: 8px;         /* Espace entre le label et le champ suivant */
+    color: #333;                /* Couleur de texte gris foncé */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;                /* Les champs prennent toute la largeur disponible */
+    padding: 10px 14px;         /* Espacement intérieur (haut/bas : 10px, gauche/droite : 14px) */
+    margin-bottom: 20px;        /* Espace entre chaque champ */
+    border: 2px solid #dce4f2;  /* Bordure bleue/grise claire */
+    border-radius: 8px;         /* Coins arrondis */
+    font-size: 1rem;            /* Taille de police standard */
+    transition: border-color 0.3s ease; /* Animation fluide lors du changement de couleur de bordure */
+}
+
+/* Quand un champ est actif (focus) */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #0D2D6B;      /* Bordure devient bleu foncé au focus */
+    outline: none;              /* Supprime le contour bleu par défaut du navigateur */
+}
+/* Style général pour les boutons */
+button {
+    background: #0D2D6B;        /* Fond bleu foncé */
+    color: white;               /* Texte blanc */
+    font-weight: 700;           /* Texte bien visible (gras) */
+    border: none;               /* Pas de bordure par défaut */
+    padding: 12px 28px;         /* Espacement intérieur (haut/bas : 12px, gauche/droite : 28px) */
+    border-radius: 25px;        /* Bouton arrondi (pill shape) */
+    cursor: pointer;            /* Curseur pointeur au survol */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Animations douces */
+    font-size: 1rem;            /* Taille de texte normale */
+    margin-right: 15px;         /* Marge à droite pour espacer d'autres éléments */
+}
+
+/* Effet de survol sur le bouton */
+button:hover {
+    background: #C8A33A;        /* Fond doré au survol */
+    box-shadow: 0 0 15px #C8A33A; /* Halo lumineux autour du bouton au survol */
+}
+
+.bouton-gauche {
+    width: 100px; /* Largeur fixe de la barre latérale à gauche */
+    background: #0D2D6B; /* Fond bleu foncé */
+    position: fixed; /* Reste fixe même lorsqu'on scrolle la page */
+    left: 0; /* Collée au bord gauche de la fenêtre */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    overflow-y: auto; /* Ajoute un ascenseur vertical si le contenu déborde */
+    padding: 15px; /* Espacement intérieur */
+    display: flex; /* Utilise Flexbox pour aligner les éléments à l’intérieur */
+    flex-direction: column; /* Les éléments s’empilent verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+.bouton-gauche ul {
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime les marges par défaut */
+    width: 100%; /* Prend toute la largeur du conteneur */
+}
+
+.bouton-gauche ul li {
+    width: 100%; /* Chaque élément de la liste prend toute la largeur */
+    text-align: center; /* Centre le texte à l’intérieur */
+    margin-bottom: 50px; /* Espace important entre les boutons */
+}
+
+.bouton-gauche ul li a {
+    display: block; /* Le lien occupe tout l’espace disponible */
+    color: #fff; /* Texte blanc */
+    font-weight: 600; /* Texte en gras */
+    text-decoration: none; /* Supprime le soulignement */
+    padding: 12px 0; /* Espace autour du texte */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    transition: all 0.3s ease; /* Animation fluide pour tous les changements */
+}
+
+.bouton-gauche ul li a:hover {
+    background: rgba(200, 163, 58, 0.2); /* Fond doré légèrement transparent au survol */
+    color: #C8A33A; /* Texte devient doré */
+    box-shadow: 0 0 15px #C8A33A; /* Lueur dorée autour du bouton au survol */
+}
+
+.charge {
+  max-width: 960px; /* Limite la largeur maximale à 960px */
+  margin-top: 50px; /* Espace en haut du bloc */
+  margin-right: 0; /* Pas d'espace à droite */
+  margin-bottom: 100px; /* Espace en bas du bloc */
+  margin-left: auto; /* Centre horizontalement (avec margin-right à 0) */
+  background: #fff; /* Fond blanc */
+  padding: 30px 40px; /* Espacement intérieur (haut/bas 30px, gauche/droite 40px) */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Ombre portée douce */
+}
+
+
+.charge h2 {
+  text-align: center; /* Centre le texte horizontalement */
+  margin-bottom: 20px; /* Espace sous le titre */
+  font-weight: 700; /* Texte en gras fort */
+  color: #2c3e50; /* Couleur bleu-gris foncé */
+}
+
+
+.charge table {
+  width: 100%; /* Le tableau prend toute la largeur du conteneur */
+  border-collapse: collapse; /* Fusionne les bordures pour éviter les doubles lignes */
+  margin-bottom: 25px; /* Espace sous le tableau */
+}
+
+
+.charge table thead tr {
+  background-color: #0D2D6B; /* Couleur de fond bleu foncé */
+  color: #fff; /* Texte en blanc */
+}
+
+
+.charge table th,
+.charge table td {
+  padding: 12px 15px; /* Espacement intérieur : haut/bas 12px, gauche/droite 15px */
+  border: 1px solid #ddd; /* Bordure grise claire autour des cellules */
+  text-align: left; /* Texte aligné à gauche */
+}
+
+
+.charge table tbody tr:nth-child(even) {
+  background-color: #f2f6fb;
+}
+
+.charge table tbody tr:hover {
+  background-color: #dbeafc;
+  transition: background-color 0.3s ease;
+}
+
+.charge h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.charge form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charge form input[type="text"],
+.charge form input[type="number"] {
+  flex: 1 1 150px;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.charge form input[type="text"]:focus,
+.charge form input[type="number"]:focus {
+  border-color: #2980b9;
+  outline: none;
+  background-color: #f0f8ff;
+}
+
+.charge form button {
+  padding: 10px 25px;
+  background-color: #0D2D6B;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.charge form button:hover {
+  background-color: #C8A33A;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #0D2D6B;
+    color: white;
+}
+
+.table td button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.table td a {
+    color: #0D2D6B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.statut-actif {
+    color: green;
+    font-weight: bold;
+}
+
+.statut-expire {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+.paragraphe {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.submit {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.submit button {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    align-items: center;
+    font-size: 1rem;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.submit a {
+    display: inline-block;
+    color: white;
+    background-color: #0D2D6B;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.submit button:nth-child(2) {
+    background: #0D2D6B;
+}
+
+.submit button:hover {
+    background: #c82333;
+}
+
+.submit button:nth-child(2):hover {
+    background: #C8A33A;
+    color: #0D2D6B;
+}
+.haut-personne {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Aligne verticalement */
+    gap: 30px;               /* Espace entre les éléments */
+    margin-bottom: 20px;
+}
+
+.haut-personne a {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+}
+
+.haut-personne a:hover {
+    background-color: #0056b3;
+}
+
+.adherent-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.adherent-card:hover {
+    transform: translateY(-5px);
+}
+
+.adherent {
+    background: #0D2D6B;
+    padding: 15px;
+    text-align: center;
+}
+.adherent ul {
+     list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.adherent ul li{
+    display: inline;
+}
+.adherent ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #C8A33A;
+    transition: background 0.3s ease;
+}
+.adherent:hover{
+    background: #FFD700;    
+}
+
+
+
+
+/* Section Titre & Actions */
+.header-actions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Section Liste des adhérents */
+.adherent-list {
+    margin-top: 20px;
+}
+
+/* Tableau des adhérents */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    background-color: #0D2D6B;
+    color: white;
+}
+
+.table-col {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.table-data {
+    padding: 10px;
+    text-align: center;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.statut-actif {
+    color: green;
+}
+
+.statut-expire {
+    color: red;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b02a37;
+}
+
+.main-content {
+    flex-grow: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.associations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.association-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.association-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-association {
+    max-width: 600px;
+}
+
+.form-association fieldset {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+.form-association legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+}
+
+.form-association label {
+    display: block;
+    margin-top: 0.8rem;
+    font-weight: 600;
+}
+
+.form-association input,
+.form-association textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-association textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-association button,
+.form-association a.btn {
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+.btn-modifier {
+    background: #FFC107;
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-modifier:hover {
+    background: #E0A800;
+}
+
+.btn-supprimer {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-supprimer:hover {
+    background: darkred;
+}
+
+.empty-list {
+    font-size: 18px;
+    color: gray;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+
+        /* Main content */
+        .main-content {
+            margin-left: 200px;
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header avec boutons */
+        .header-section {
+            margin-bottom: 30px;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary:hover {
+            background: #C8A33A;
+            color: #0D2D6B;
+            box-shadow: 0 0 15px rgba(200, 163, 58, 0.4);
+        }
+
+        /* Barre de recherche */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+
+        .search-bar:focus {
+            border-color: #0D2D6B;
+            outline: none;
+        }
+
+        .search-bar {
+            padding-left: 50px;
+        }
+
+        /* Layout principal avec 2 colonnes */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Section tableau */
+        .table-section {
+            background: white;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead {
+            background: #0D2D6B;
+            color: white;
+        }
+
+        .table th,
+        .table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Statuts */
+        .status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status.actif {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.expire {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Actions dans le tableau */
+        .table-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit {
+            background: #FFC107;
+            color: white;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-small:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sidebar droite - Profil */
+        .profile-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+        }
+
+        .profile-name {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #0D2D6B;
+        }
+
+        .profile-type {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .profile-status {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-modify {
+            width: 100%;
+            background: #0D2D6B;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modify:hover {
+            background: #C8A33A;
+            color: #0D2D6B;
+        }
+
+        /* Modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0D2D6B;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #dce4f2;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #0D2D6B;
+            outline: none;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .bouton-gauche {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .table {
+                font-size: 14px;
+            }
+            
+            .table th,
+            .table td {
+                padding: 10px 8px;
+            }
+        }
+
+.finance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.finance-card {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.finance-card:hover {
+    transform: scale(1.03);
+    background: #e0f7fa;
+}
+  .mairie {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #e8f0fe;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+
+  .mairie h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .mairie .info-mairie {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .login-container, .mairie {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    flex: 1 1 400px; /* prend au moins 400px, puis s'adapte */
+    min-width: 300px;
+  }
+.login-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .login-container img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .login-container button {
+            padding: 10px 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 12px;
+        }
+
+  @media (max-width: 768px) {
+    .container-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+    .login-container, .mairie {
+      margin: 20px auto;
+      max-width: 90%;
+    }
+  }
+  .container-flex {
+    display: flex;          /* <-- Important pour le placement côte à côte */
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
